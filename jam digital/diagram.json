@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "Wokwi User",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd", "top": 60, "left": 200, "attrs": { "pins": "i2c" } },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -72.6, "left": 192.1, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:21", "lcd:SDA", "green", [ "h38.4", "v34.2" ] ],
+    [ "esp:22", "lcd:SCL", "blue", [ "h28.8", "v72.5" ] ],
+    [ "esp:GND.1", "lcd:GND", "black", [ "h-9.45", "v96", "h192", "v-157.6" ] ],
+    [ "esp:5V", "lcd:VCC", "red", [ "v38.4", "h172.95", "v-138.5" ] ],
+    [ "rtc1:SCL", "esp:22", "blue", [ "h-76.8", "v76.6" ] ],
+    [ "esp:21", "rtc1:SDA", "green", [ "h38.4", "v-115.2" ] ],
+    [ "rtc1:5V", "esp:5V", "red", [ "h-28.8", "v268.4", "h0", "v19.2", "h-172.8" ] ],
+    [ "esp:GND.1", "rtc1:GND", "black", [ "h-9.45", "v-220.8" ] ]
+  ],
+  "dependencies": {}
+}
